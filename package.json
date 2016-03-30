@@ -1,0 +1,12 @@
+{
+  "name": "@markgarrigan/jenga",
+  "version": "1.0.2",
+  "description": "Precompile html includes.",
+  "author": "Mark Garrigan <mark@markgarrigan.com> (http://markgarrigan.com)",
+  "bin": {
+    "jenga": "bin/jenga.js"
+  },
+  "dependencies": {
+    "shelljs": "^0.6.0"
+  }
+}
