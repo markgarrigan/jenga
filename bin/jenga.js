@@ -3,7 +3,9 @@ require('shelljs/global');
 
 var argv = require('yargs')
     .usage('Usage: $0 [options]')
-    .default({ s : 'src', d : 'dist'})
+    .default({ s : 'src', d : 'dist', r : false})
+    .alias('r', 'root')
+    .describe('r', 'If set, files in this directory will be\nplaced at the root of the dist directory')
     .alias('s', 'source')
     .describe('s', 'Set the source directory')
     .alias('d', 'dest')
@@ -11,6 +13,7 @@ var argv = require('yargs')
     .help('h')
     .alias('h', 'help')
     .argv,
+    root = remove_trailing_slashes(argv.r),
     src = remove_trailing_slashes(argv.s),
     dest = remove_trailing_slashes(argv.d);
 
@@ -31,6 +34,9 @@ if (test('-d', src)) {
       var path_parts = paths[i].split('/'),
           filename = path_parts[path_parts.length-1],
           tempfile = Math.floor(Math.random() * 10000000) + '.tmp';
+      if (root && path_parts.indexOf(root) > -1) {
+        path_parts.splice(path_parts.indexOf(root), 1)
+      }
       path_parts.shift();
       path_parts.pop();
       var path = path_parts.join('/');
