@@ -95,6 +95,10 @@ By default jenga will build html files to a directory called `dist`.
 jenga [options]
 ```
 
+#### -r, --root (optional, default = false)
+
+If set, files in this directory will be placed at the root of the dist directory.
+
 #### -s, --source (optional, default = "src")
 
 Set the source directory for your html files.
