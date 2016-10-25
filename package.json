@@ -1,6 +1,6 @@
 {
   "name": "@markgarrigan/jenga",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Precompile html includes.",
   "author": "Mark Garrigan <mark@markgarrigan.com> (http://markgarrigan.com)",
   "bin": {
